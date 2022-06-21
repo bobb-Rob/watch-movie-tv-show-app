@@ -1,23 +1,27 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-use-before-define */
 
+const resultElement = () => document.querySelector('.shows');
+
 export default async () => {
   const url = 'https://api.tvmaze.com/search/shows?q=girls';
   await fetch(url)
     .then((response) => response.json())
     .then((data) => {
       renderNavbar(data);
+      renderShow(data);
       document.querySelector('.errorMessage').innerHTML = '';
       return data;
     })
     .catch((e) => {
       document.querySelector('.errorMessage').innerHTML = `<span class="text-danger">${e}No such show available</span>`;
       renderNavbar([]);
+      renderShow([]);
     });
 };
 
-function renderNavbar(results) {
-  const resultList = document.querySelector('.shows');
+const renderNavbar = (results) => {
+  const resultList = resultElement();
   resultList.innerHTML = '';
 
   // Creating navigation bar
@@ -43,4 +47,30 @@ function renderNavbar(results) {
     </div>
 </nav> `;
   resultList.insertAdjacentHTML('beforebegin', navBar);
-}
+};
+
+const renderShow = (results) => {
+  const resultList = resultElement();
+  results.forEach((result) => {
+    const element = document.createElement('div');
+    element.classList.add('card');
+    element.style.width = '20rem';
+    element.innerHTML = `
+      <img src="${result.show.image.original}" class="card-img-top w-100" alt="Image of the show">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">${result.show.name}</h5>
+          <i class="bi bi-suit-heart like" id="${result.show.id}">id: ${result.show.id}</i>
+        </div>
+        <div class="d-flex justify-content-end">
+          <span class="text-dark d-like">${0} likes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${result.show.id}" >
+          Comments
+        </button>`;
+    resultList.appendChild(element);
+  });
+};
