@@ -17,3 +17,15 @@ p {
 .like {
   cursor: pointer;
 }
+
+.app-wrapper {
+  border: 1px solid red;
+  height: 100%;
+}
+
+.app-footer {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid red;
+  width: 100%;
+}
