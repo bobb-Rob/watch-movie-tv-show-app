@@ -1,5 +1,9 @@
-import './style.css';
+import './styles/style.css';
+import './styles/bootstrap.min.css';
+import './styles/bootstrap-grid.min.css';
+import './bootstrap.bundle.min.js';
+import displayShow from './renderDOM.js';
 
-const body = document.querySelector('body');
-
-body.style.backgroundColor = 'yellow';
+document.addEventListener('DOMContentLoaded', () => {
+  displayShow();
+});
