@@ -1,0 +1,20 @@
+{
+  "name": "watch-movie-tv-show-app",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobb-Rob/watch-movie-tv-show-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobb-Rob/watch-movie-tv-show-app/issues"
+  },
+  "homepage": "https://github.com/bobb-Rob/watch-movie-tv-show-app#readme"
+}
