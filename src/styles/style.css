@@ -28,3 +28,53 @@ p {
   background-color: white;
   width: 100%;
 }
+
+.app-modal {
+  position: fixed;
+  display: none;
+  z-index: 100;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.appear {
+  display: block;
+}
+
+.app-modal-content {
+  width: 50%;
+  background-color: white;
+  margin: 1rem auto;
+  padding: 0 5%;
+  position: relative;
+}
+
+.comment-image {
+  width: 300px;
+}
+
+.comment-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.show-description {
+  list-style: none;
+}
+
+.comment-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-form-wrapper input,
+.comment-form-wrapper textarea {
+  width: 300%;
+  align-self: flex-start;
+}
