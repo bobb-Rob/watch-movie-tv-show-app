@@ -56,7 +56,7 @@ const insertModal = ({ show }) => {
         </ul>
         <div>
           <h5>
-            Comments <span class='comment-count'></span>
+            Comments <span class='comment-count'>(0)</span>
           </h5>
           <ul class="comments-container">
   
@@ -93,12 +93,26 @@ const addEventToCommentBtn = async () => {
     const show = shows.find((item) => item.show.id === Number(recipientId));
     insertModal(show);
 
+    // Display comment count function
+    const getCommentCount = () => {
+      const container = document.querySelector('.comments-container');
+      const count = container.children.length;
+      return count;
+    };
+    const updateCommentCount = () => {
+      const commentCountEl = document.querySelector('.comment-count');
+      commentCountEl.textContent = `(${getCommentCount()})`;
+    };
+
     // Display comment from API
     getComment(show.show.id)
       .then((comments) => {
         comments.forEach((element) => {
           commentCard(element);
         });
+        return comments;
+      }).then(() => {
+        updateCommentCount(); // Call comment count update function
       });
 
     // Add/post comment
@@ -115,9 +129,15 @@ const addEventToCommentBtn = async () => {
       data.item_id = show.show.id;
       data.username = name;
       data.comment = comment;
-      postComment(data);
-      data.creation_date = getDate();
-      commentCard(data);
+      postComment(data).then((response) => {
+        if (response.status === 201) {
+          data.creation_date = getDate();
+          commentCard(data);
+          updateCommentCount();
+        }
+      });
+      document.querySelector('#name').value = '';
+      document.querySelector('#comment').value = '';
       return '';
     });
     // Display pop up modal
