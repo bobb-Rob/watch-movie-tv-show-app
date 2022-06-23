@@ -83,7 +83,8 @@ const insertModal = ({ show }) => {
 };
 
 const addEventToCommentBtn = async () => {
-  const shows = await generateShows();
+  const myshows = await generateShows();
+  const shows = myshows.filter((s) => s.show.id !== 5451);
   const showEl = resultElement();
   showEl.addEventListener('click', (e) => {
     const targetEl = e.target;
