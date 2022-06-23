@@ -62,8 +62,14 @@ p {
   right: 1.5rem;
 }
 
+.show-title {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .show-description {
   list-style: none;
+  padding-left: 0;
 }
 
 .comment-form-wrapper {
@@ -77,4 +83,13 @@ p {
 .comment-form-wrapper textarea {
   width: 300%;
   align-self: flex-start;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
 }
