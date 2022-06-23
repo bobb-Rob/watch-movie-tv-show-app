@@ -18,9 +18,33 @@ p {
   cursor: pointer;
 }
 
+/* .card-img-top {
+  width: 100%;
+  height: 30vw;
+  object-fit: cover;
+} */
+
 .app-wrapper {
   height: 100%;
   padding: 2rem 0 4rem;
+}
+
+.card-img-top {
+  transition: transform 0.2s; /* Animation */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-img-top :hover {
+  transform: scale(1.5);
+}
+
+.navbar {
+  margin: 24px auto;
+}
+
+.shows {
+  margin: 24px;
 }
 
 .app-footer {
@@ -72,13 +96,6 @@ p {
   list-style: none;
   padding-left: 0;
 }
-
-/* .comment-form-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 
 .comment-form {
   width: 80%;
