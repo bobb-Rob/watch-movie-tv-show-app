@@ -8,15 +8,13 @@ const commentsURL = (id = 0) => {
   return `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Gk2LHbamyoGODOj6Ra8F/comments?item_id=${id}`;
 };
 
-
-
 const commentCard = (commentObj) => {
   const element = `
     <li>
       <span class="comment-date">${commentObj.creation_date} ${commentObj.username}: ${commentObj.comment} </span>
      
     </li>`;
-    document.querySelector('.comments-container').insertAdjacentHTML('beforeend', element);
+  document.querySelector('.comments-container').insertAdjacentHTML('beforeend', element);
 };
 
 const getComment = async (id) => {
@@ -36,7 +34,6 @@ const postComment = async (data) => {
   });
   return response;
 };
-
 
 const insertModal = ({ show }) => {
   const resultList = resultElement();
@@ -96,6 +93,17 @@ const addEventToCommentBtn = async () => {
     const show = shows.find((item) => item.show.id === Number(recipientId));
     insertModal(show);
 
+    // Display comment count function
+    const getCommentCount = () => {
+      const container = document.querySelector('.comments-container');
+      const count = container.children.length;
+      return count;
+    };
+    const updateCommentCount = () => {
+      const commentCountEl = document.querySelector('.comment-count');
+      commentCountEl.textContent = `(${getCommentCount()})`;
+    };
+
     // Display comment from API
     getComment(show.show.id)
       .then((comments) => {
@@ -103,30 +111,16 @@ const addEventToCommentBtn = async () => {
           commentCard(element);
         });
         return comments;
-      }).then((res) => {
-        console.log(res)
-        updateCommentCount();  
-      })
-
-    //Display comment count    
-    const getCommentCount = () => {
-        const container = document.querySelector('.comments-container');       
-        const count = container.children.length;       
-        return count;
-    }
-    const updateCommentCount = () => {
-        const commentCountEl = document.querySelector('.comment-count');
-        commentCountEl.textContent = `(${getCommentCount()})`
-    }
-    
-      
+      }).then(() => {
+        updateCommentCount(); // Call comment count update function
+      });
 
     // Add/post comment
     const formContainer = document.querySelector('.comment-form');
     formContainer.addEventListener('submit', (e) => {
       e.preventDefault();
-      let name = document.querySelector('#name').value;
-      let comment = document.querySelector('#comment').value;
+      const name = document.querySelector('#name').value;
+      const comment = document.querySelector('#comment').value;
       const data = {};
 
       if (name === '' && comment === '') {
@@ -136,12 +130,12 @@ const addEventToCommentBtn = async () => {
       data.username = name;
       data.comment = comment;
       postComment(data).then((response) => {
-        if(response.status === 201){          
-            data.creation_date = getDate();
-            commentCard(data);
-            updateCommentCount();                          
-        }         
-      })
+        if (response.status === 201) {
+          data.creation_date = getDate();
+          commentCard(data);
+          updateCommentCount();
+        }
+      });
       document.querySelector('#name').value = '';
       document.querySelector('#comment').value = '';
       return '';
