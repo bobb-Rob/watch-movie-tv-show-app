@@ -1,4 +1,5 @@
 import { resultElement, generateShows } from './renderDOM.js';
+import getDate from './date.js';
 
 const commentsURL = (id = 0) => {
   if (id === 0) {
@@ -20,6 +21,18 @@ const getComment = async (id) => {
   const url = commentsURL(id);
   const response = await fetch(url);
   return response.json();
+};
+
+const postComment = async (data) => {
+  const url = commentsURL();
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  return response;
 };
 
 const insertModal = ({ show }) => {
@@ -49,6 +62,20 @@ const insertModal = ({ show }) => {
   
           </ul>
         </div>
+        <div class="comment-form-wrapper">
+            <form class="comment-form">
+                <h5>Add a comment</h5>
+            <div>
+                <label for="name" class="form-label text-dark"></label>
+                <input type="text" class="form-control name" id="name" required maxlength="32" placeholder="Your name">
+            </div>
+            <div>
+                <label for="comment" class="form-label text-dark"></label>
+                <textarea class="form-control insight-text" aria-label="With textarea" id="comment" required maxlength="32" placeholder="Your insights"></textarea>
+            </div>                      
+                <button type="submit" class="btn btn-primary bg-dark shadow">Comment</button>                    
+            </form>
+        </div> 
     </div> 
   </div>`;
 
@@ -64,8 +91,8 @@ const addEventToCommentBtn = async () => {
 
     // FInd the right show and insert modal with data
     const show = shows.find((item) => item.show.id === Number(recipientId));
-
     insertModal(show);
+
     // Display comment from API
     getComment(show.show.id)
       .then((comments) => {
@@ -74,6 +101,25 @@ const addEventToCommentBtn = async () => {
         });
       });
 
+    // Add/post comment
+    const formContainer = document.querySelector('.comment-form');
+    formContainer.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.querySelector('#name').value;
+      const comment = document.querySelector('#comment').value;
+      const data = {};
+
+      if (name === '' && comment === '') {
+        return '';
+      }
+      data.item_id = show.show.id;
+      data.username = name;
+      data.comment = comment;
+      postComment(data);
+      data.creation_date = getDate();
+      commentCard(data);
+      return '';
+    });
     // Display pop up modal
     const appModal = document.querySelector('.app-modal');
     appModal.classList.add('appear');

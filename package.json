@@ -1,4 +1,19 @@
 {
+  "name": "to-do-list",
+  "description": "\"To-do list\" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndikumanaisaie/To-do-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndikumanaisaie/To-do-list/issues"
+  },
+  "homepage": "https://github.com/ndikumanaisaie/To-do-list#readme",
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/plugin-transform-modules-commonjs": "^7.18.2",
@@ -26,7 +41,9 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21",
+    "luxon": "^2.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
@@ -34,7 +51,8 @@
     "dev": "webpack --mode development",
     "test": "jest --coverage",
     "start": "webpack serve --open",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -42,20 +60,5 @@
     "setupFiles": [
       "jest-localstorage-mock"
     ]
-  },
-  "name": "to-do-list",
-  "description": "\"To-do list\" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.",
-  "version": "1.0.0",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ndikumanaisaie/To-do-list.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ndikumanaisaie/To-do-list/issues"
-  },
-  "homepage": "https://github.com/ndikumanaisaie/To-do-list#readme"
+  }
 }

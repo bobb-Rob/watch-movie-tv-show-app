@@ -20,12 +20,13 @@ p {
 
 .app-wrapper {
   height: 100%;
+  padding: 2rem 0 4rem;
 }
 
 .app-footer {
   padding: 1rem;
   text-align: center;
-  background-color: white;
+  background-color: rgb(224, 240, 250);
   width: 100%;
 }
 
@@ -72,17 +73,26 @@ p {
   padding-left: 0;
 }
 
-.comment-form-wrapper {
+/* .comment-form-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+
+.comment-form {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .comment-form-wrapper input,
 .comment-form-wrapper textarea {
-  width: 300%;
+  width: 100%;
   align-self: flex-start;
+}
+
+.comment-form-wrapper textarea {
+  margin-bottom: 1rem;
 }
 
 .comments-container {
@@ -91,5 +101,5 @@ p {
   align-items: flex-start;
   list-style: none;
   width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
