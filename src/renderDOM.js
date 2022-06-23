@@ -67,7 +67,6 @@ const getLikes = async () => {
   return result;
 };
 
-
 const displayLikes = () => {
   const likeButtons = document.querySelectorAll('.like-button');
 
@@ -86,9 +85,9 @@ const displayLikes = () => {
   });
 };
 
-export { 
-  renderShow, 
-  displayLikes,  
+export {
+  renderShow,
+  displayLikes,
   resultElement,
-  generateShows
+  generateShows,
 };

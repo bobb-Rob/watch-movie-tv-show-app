@@ -1,11 +1,11 @@
-import { generateShows, resultElement } from "./renderDOM";
+import { generateShows, resultElement } from './renderDOM.js';
 
 const renderNavbar = async () => {
-    const shows = await generateShows();
-    const resultList = resultElement();
-    resultList.innerHTML = '';
-    // Creating navigation bar
-    const navBar = `
+  const shows = await generateShows();
+  const resultList = resultElement();
+  resultList.innerHTML = '';
+  // Creating navigation bar
+  const navBar = `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">TVShows logo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@ const renderNavbar = async () => {
         </ul>
       </div>
   </nav> `;
-    resultList.insertAdjacentHTML('beforebegin', navBar);
-  };
+  resultList.insertAdjacentHTML('beforebegin', navBar);
+};
 
-  export default renderNavbar;
+export default renderNavbar;
