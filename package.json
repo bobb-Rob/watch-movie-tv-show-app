@@ -49,7 +49,7 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
-    "test": "jest --coverage",
+    "test": "jest --watch",
     "start": "webpack serve --open",
     "build": "webpack --config webpack.config.js",
     "deploy": "npm run build && gh-pages -d dist"
