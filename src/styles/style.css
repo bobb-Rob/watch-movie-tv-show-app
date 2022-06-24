@@ -26,7 +26,7 @@ p {
 
 .app-wrapper {
   height: 100%;
-  padding: 2rem 0 4rem;
+  padding: 0 0 4rem;
 }
 
 .card-img-top {
@@ -119,4 +119,34 @@ p {
   list-style: none;
   width: 90%;
   margin: 1rem auto;
+}
+
+@media screen and (max-width: 395px) {
+  .app-modal-content {
+    width: 70%;
+  }
+
+  .comment-image {
+    width: 80%;
+  }
+
+  .comment-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .app-modal-content {
+    width: 70%;
+  }
+
+  .comment-image {
+    width: 80%;
+  }
+
+  .comment-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
 }
