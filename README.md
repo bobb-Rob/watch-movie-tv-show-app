@@ -4,6 +4,7 @@
 
 > This is a website that consumes TV maze API and allows users to like and post reviews of movies they have watched. It is a capstone project for JavaScript and Networking Module two of the microverse curricullum.
 
+## [Watch a video description of the features](https://drive.google.com/file/d/1ysVUkkB0vx2lSc_-8Gol2e5RUtHi2y5R/view?usp=sharing)
 
 ## Built With
 
@@ -12,6 +13,7 @@
 - CSS
 - Webpack
 - Test with Jest
+- Luxon.js
 
 ## Live Demo
 
