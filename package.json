@@ -1,19 +1,19 @@
 {
-  "name": "to-do-list",
-  "description": "\"To-do list\" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.",
+  "name": "movie-rating-website",
+  "description": "This is a website that consumes TV maze API and allows users to like and post reviews of movies they have watched. It is a capstone project for JavaScript and Networking Module two of the microverse curricullum.",
   "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ndikumanaisaie/To-do-list.git"
+    "url": "git+https://github.com/bobb-Rob/watch-movie-tv-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ndikumanaisaie/To-do-list/issues"
+    "url": "https://github.com/bobb-Rob/watch-movie-tv-app/issues"
   },
-  "homepage": "https://github.com/ndikumanaisaie/To-do-list#readme",
+  "homepage": "https://github.com/bobb-Rob/watch-movie-tv-app#readme",
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/plugin-transform-modules-commonjs": "^7.18.2",
@@ -49,7 +49,7 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
-    "test": "jest --coverage",
+    "test": "jest --watch",
     "start": "webpack serve --open",
     "build": "webpack --config webpack.config.js",
     "deploy": "npm run build && gh-pages -d dist"

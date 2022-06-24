@@ -1,56 +1,78 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Movie Rating Website
 
-> Description the project.
+> This is a website that consumes TV maze API and allows users to like and post reviews of movies they have watched. It is a capstone project for JavaScript and Networking Module two of the microverse curricullum.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- HTML 5
+- CSS
+- Webpack
+- Test with Jest
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+[View Website here via live link](https://bobb-rob.github.io/watch-movie-tv-show-app/)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+> You will need the following on you machine to reproduce this project
+
+- Code editor preferebly Visual Studio Code (VScode).
+- Basic understanding of HTML, CSS Javascript languages
+
 ### Setup
+
+> To clone this repository, please follow the steps below:
+
+#### **Clone Git Repository In GitHub**
+
+- In the File menu, click Clone Repository.
+- Click the tab that corresponds to the location of the repository you want to clone. ...
+- Choose the repository you want to clone from the list.
+- Click Choose... and navigate to a local path where you want to clone the repository.
+- Click Clone.
+
+or
+
+#### **Clone Git Repository In Visual Studio Code**
+
+- Open VSCode and select a folder where to download the Git project to (Ctrl + K wait a second Ctrl + O):
+
+  > Top Menu -> Files -> Open Folder...
+
+- Start the terminal (Ctrl + `):
+
+  > Top Menu -> View-> Terminal
+
+- Execute the git clone command in the terminal:
+  > PS C:\> git clone https://github.com/path/to/repo.git
 
 ### Install
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- install VScode if you do not already have it.
+- Sass Compiler VS Code extension.
 
 ## Authors
 
-👤 **Author1**
+### Ndikumana Isaie
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [ndikumanaisaie](https://github.com/ndikumanaisaie)
+- Twitter: [Ndikuma38670724](https://twitter.com/Ndikuma38670724)
+- LinkedIn: [ndikumana-isaie-21166273](https://www.linkedin.com/in/ndikumana-isaie-21166273/)
 
-👤 **Author2**
+### Robertson Akpan
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@bobb-rob](https://github.com/bobb-Rob)
+- Twitter: [@\_\_\_Robertson](https://twitter.com/___Robertson)
+- LinkedIn: [@RobertsonAkpan](https://www.linkedin.com/in/robertson-akpan-6895a0123/)
 
 ## 🤝 Contributing
 
@@ -64,9 +86,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Luxon.js package
+- TV maze API
+
 
 ## 📝 License
 
