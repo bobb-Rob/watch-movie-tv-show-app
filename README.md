@@ -13,7 +13,7 @@
 - Webpack
 - Test with Jest
 
-## Live Demo (if available)
+## Live Demo
 
 [View Website here via live link](https://bobb-rob.github.io/watch-movie-tv-show-app/)
 
